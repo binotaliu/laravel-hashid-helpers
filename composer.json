@@ -1,0 +1,25 @@
+{
+    "name": "binota/laravel-hashid-helpers",
+    "description": "Provide query functions for Eloquent Model",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "BinotaLIU",
+            "email": "me@binota.org"
+        }
+    ],
+    "require": {
+        "elfsundae/laravel-hashid": "^1.4",
+        "illuminate/support": "7.*|6.*|5.7.*|5.6.*",
+        "illuminate/contracts": "7.*|6.*|5.7.*|5.6.*",
+        "illuminate/database": "7.*|6.*|5.7.*|5.6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Binota\\LaravelHashidHelpers\\": "src/"
+        }
+    },
+    "require-dev": {
+    }
+}
