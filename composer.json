@@ -11,9 +11,9 @@
     ],
     "require": {
         "elfsundae/laravel-hashid": "^1.4",
-        "illuminate/support": "7.*|6.*|5.7.*|5.6.*",
-        "illuminate/contracts": "7.*|6.*|5.7.*|5.6.*",
-        "illuminate/database": "7.*|6.*|5.7.*|5.6.*"
+        "illuminate/support": "8.*|7.*|6.*",
+        "illuminate/contracts": "8.*|7.*|6.*",
+        "illuminate/database": "8.*|7.*|6.*"
     },
     "autoload": {
         "psr-4": {
