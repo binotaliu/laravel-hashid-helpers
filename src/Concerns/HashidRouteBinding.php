@@ -10,7 +10,7 @@ trait HashidRouteBinding
 {
     public function getRouteKey()
     {
-        return $this->getHashidDriver()->decode(
+        return $this->getHashidDriver()->encode(
             $this->getAttribute($this->getRouteKeyName())
         );
     }
