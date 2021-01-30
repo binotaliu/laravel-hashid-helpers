@@ -8,8 +8,11 @@ trait HasHashid
 
     public function getHashid()
     {
-        $hashid = $this->getHashidDriver();
-        return $hashid->encode($this->getKey());
+        if (($key = $this->getKey()) === null) {
+            return null;
+        }
+
+        return $this->getHashidDriver()->encode($key);
     }
 
     /**

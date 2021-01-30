@@ -10,18 +10,26 @@ trait HashidRouteBinding
 {
     public function getRouteKey()
     {
-        return $this->getHashidDriver()->encode(
-            $this->getAttribute($this->getRouteKeyName())
-        );
+        if (($hashId = $this->getAttribute($this->getRouteKeyName())) === null) {
+            return null;
+        }
+        return $this->getHashidDriver()->encode($hashId);
     }
 
     public function resolveRouteBinding($value, $field = null)
     {
+        if ($value === null) {
+            return null;
+        }
         return $this->where($field ?? $this->getRouteKeyName(), $this->getHashidDriver()->decode($value))->first();
     }
 
     public function resolveChildRouteBinding($childType, $value, $field)
     {
+        if ($value === null) {
+            return null;
+        }
+
         $decodedValue = $this->getHashidDriver()->decode($value);
         $relationship = $this->{Str::plural(Str::camel($childType))}();
 
