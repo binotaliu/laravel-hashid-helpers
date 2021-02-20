@@ -4,8 +4,6 @@ namespace Binota\LaravelHashidHelpers\Concerns;
 
 trait HasHashid
 {
-    protected $hashidConnection = '';
-
     public function getHashid()
     {
         if (($key = $this->getKey()) === null) {
@@ -20,6 +18,6 @@ trait HasHashid
      */
     protected function getHashidDriver()
     {
-        return app('hashid')->connection($this->hashidConnection);
+        return app('hashid')->connection($this?->hashidConnection);
     }
 }
